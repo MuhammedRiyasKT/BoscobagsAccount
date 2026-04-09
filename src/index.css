@@ -163,14 +163,15 @@ th {
 
   /* Mobile Table Optimization */
   .table-container {
-    overflow-x: auto; /* Fallback but we try to fit */
+    overflow-x: hidden; /* Prevent scrollbar from the wider-than-100% table logic */
     border-radius: 0.5rem;
     margin: 0 -0.25rem; /* Slight negative margin to maximize space */
   }
 
   table {
-    width: 100%;
-    /* "Small zoom" effect as requested by user */
+    /* To fill the space when scaled down, we make the table wider than 100% */
+    width: 118%; /* Approx 1/0.85 */
+    /* "Small zoom" effect */
     zoom: 0.85; 
     -moz-transform: scale(0.85);
     -moz-transform-origin: top left;
@@ -213,6 +214,7 @@ th {
 /* Extra small devices optimization */
 @media (max-width: 480px) {
   table {
+    width: 133.5%; /* Approx 1/0.75 */
     zoom: 0.75;
     -moz-transform: scale(0.75);
     transform: scale(0.75);

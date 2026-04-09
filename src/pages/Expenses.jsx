@@ -79,8 +79,8 @@ const Expenses = () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Expenses (Outflow)</h2>
+      <div className="page-header">
+        <h2>Expenses (Outflow)</h2>
         <button className="btn btn-primary" onClick={() => handleOpenModal()}>
           <Plus size={18} /> Add Expense
         </button>

@@ -97,8 +97,8 @@ const Sales = () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Sales (Income)</h2>
+      <div className="page-header">
+        <h2>Sales (Income)</h2>
         <button className="btn btn-primary" onClick={() => handleOpenModal()}>
           <Plus size={18} /> Record Sale
         </button>

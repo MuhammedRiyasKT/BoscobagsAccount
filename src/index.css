@@ -90,6 +90,19 @@ body {
   transition: margin-left 0.3s;
 }
 
+/* Page Header */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.page-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 /* Card */
 .card {
   background: white;
@@ -131,7 +144,101 @@ th {
 @media (max-width: 768px) {
   .main-content {
     margin-left: 0;
-    padding: 1rem;
+    padding: 0.75rem;
     margin-top: 60px; /* Space for mobile header */
   }
+
+  .page-header {
+    margin-bottom: 1rem;
+  }
+  
+  .page-header h2 {
+    font-size: 1.25rem !important;
+  }
+
+  /* Compact Card for Mobile */
+  .card {
+    padding: 1rem;
+  }
+
+  /* Mobile Table Optimization */
+  .table-container {
+    overflow-x: auto; /* Fallback but we try to fit */
+    border-radius: 0.5rem;
+    margin: 0 -0.25rem; /* Slight negative margin to maximize space */
+  }
+
+  table {
+    width: 100%;
+    /* "Small zoom" effect as requested by user */
+    zoom: 0.85; 
+    -moz-transform: scale(0.85);
+    -moz-transform-origin: top left;
+    transform: scale(0.85);
+    transform-origin: top left;
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 0.6rem 0.25rem;
+    font-size: 0.8rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* Compact labels for status */
+  td span {
+    padding: 0.15rem 0.35rem !important;
+    font-size: 0.65rem !important;
+  }
+
+  /* Adjust Action buttons in tables on mobile */
+  td:last-child {
+    white-space: nowrap;
+    min-width: 60px;
+  }
+
+  /* Responsive Page Headers */
+  h2 {
+    font-size: 1.25rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Extra small devices optimization */
+@media (max-width: 480px) {
+  table {
+    zoom: 0.75;
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+  }
+  
+  .main-content {
+    padding: 0.5rem;
+  }
+  
+  th, td {
+    padding: 0.5rem 0.2rem;
+  }
+
+  .page-header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .page-header h2 {
+    font-size: 1.1rem !important;
+    flex-grow: 1;
+  }
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
